@@ -34,6 +34,7 @@ const capítulos = defineCollection({
         orden: z.number(),
         título: z.string(),
         títuloÍndice: z.optional(z.string()), // Se usa título si no se proporciona
+        encabezado: z.optional(z.string()),   // Se usa título si no se proporciona
         grupoÍndice: z.string(),
         descripción: z.string()
     })

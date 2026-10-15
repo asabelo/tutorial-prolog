@@ -40,6 +40,10 @@ function licenciasDeFuentes() {
       src: "./src/assets/fonts/NewComputerModern/{License.txt,GUST-FONT-LICENSE.txt,README}",
       dest: "fonts/newcomputermodern",
     },
+    {
+      src: "./src/assets/fonts/LinuxLibertine/{LICENCE.txt,OFL-1.1.txt}",
+      dest: "fonts/linuxlibertine",
+    },
   ];
 }
 

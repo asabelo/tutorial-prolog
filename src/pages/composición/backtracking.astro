@@ -1,5 +1,5 @@
 ---
-import DiseñoBásico from "../../layouts/DiseñoBásico.astro"
+import DiseñoCapítulo from "../../layouts/DiseñoCapítulo.astro"
 import Quiz from "../../components/Quiz.astro"
 import Python from "../../components/Python.astro"
 import Prolog from "../../components/Prolog.astro"
@@ -7,9 +7,8 @@ import { Image } from "astro:assets"
 import imagenÁrbolBúsqueda from "../../assets/images/composición/backtracking/árbol-búsqueda.png"
 ---
 
-<DiseñoBásico capítulo="composición/backtracking">
+<DiseñoCapítulo capítulo="composición/backtracking">
 
-    <h1>¿Palante, patrás? Hablemos de <strong>backtracking</strong></h1>
     <p>
         ¿Qué es el <i>backtracking</i>? Buena pregunta. El algoritmo de backtracking (“vuelta atrás”)
         es sencillamente una búsqueda en profundidad (se explora una rama completamente hasta llegar
@@ -123,4 +122,4 @@ import imagenÁrbolBúsqueda from "../../assets/images/composición/backtracking
 
     <Quiz ruta="composición/backtracking/quiz3" />
 
-</DiseñoBásico>
+</DiseñoCapítulo>

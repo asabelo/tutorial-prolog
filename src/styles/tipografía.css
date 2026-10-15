@@ -1,0 +1,224 @@
+/* Cuerpo: Linux Libertine */
+@font-face {
+    font-family: "Linux Libertine";
+    src: url("../assets/fonts/LinuxLibertine/LinLibertine_Rah.ttf") format("truetype");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Linux Libertine";
+    src: url("../assets/fonts/LinuxLibertine/LinLibertine_RBah.ttf") format("truetype");
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Linux Libertine";
+    src: url("../assets/fonts/LinuxLibertine/LinLibertine_RIah.ttf") format("truetype");
+    font-weight: 400;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Linux Libertine";
+    src: url("../assets/fonts/LinuxLibertine/LinLibertine_RBIah.ttf") format("truetype");
+    font-weight: 700;
+    font-style: italic;
+    font-display: swap;
+}
+
+/* Rótulos: Linux Biolinum, la sans hermana de Libertine */
+@font-face {
+    font-family: "Linux Biolinum";
+    src: url("../assets/fonts/LinuxLibertine/LinBiolinum_Rah.ttf") format("truetype");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Linux Biolinum";
+    src: url("../assets/fonts/LinuxLibertine/LinBiolinum_RBah.ttf") format("truetype");
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Linux Biolinum";
+    src: url("../assets/fonts/LinuxLibertine/LinBiolinum_RIah.ttf") format("truetype");
+    font-weight: 400;
+    font-style: italic;
+    font-display: swap;
+}
+
+/* Matemáticas: New Computer Modern */
+@font-face {
+    font-family: "NewCM10";
+    src: url("../assets/fonts/NewComputerModern/otf/NewCM10-Book.otf") format("opentype");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "NewCM10";
+    src: url("../assets/fonts/NewComputerModern/otf/NewCM10-BookItalic.otf") format("opentype");
+    font-weight: 400;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "NewCM10";
+    src: url("../assets/fonts/NewComputerModern/otf/NewCM10-Bold.otf") format("opentype");
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "NewCM10";
+    src: url("../assets/fonts/NewComputerModern/otf/NewCM10-BoldItalic.otf") format("opentype");
+    font-weight: 700;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "NewCMMath";
+    src: url("../assets/fonts/NewComputerModern/otf/NewCMMath-Regular.otf") format("opentype");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Código: New Computer Modern Mono */
+@font-face {
+    font-family: "NewCMMono10";
+    src: url("../assets/fonts/NewComputerModern/otf/NewCMMono10-Regular.otf") format("opentype");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "NewCMMono10";
+    src: url("../assets/fonts/NewComputerModern/otf/NewCMMono10-Italic.otf") format("opentype");
+    font-weight: 400;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "NewCMMono10";
+    src: url("../assets/fonts/NewComputerModern/otf/NewCMMono10-Bold.otf") format("opentype");
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+:root {
+    --fuente-cuerpo: "Linux Libertine", Georgia, serif;
+    --fuente-títulos: "Linux Biolinum", "Helvetica Neue", Arial, sans-serif;
+    --fuente-código: "NewCMMono10", Consolas, monospace;
+    --fuente-matemáticas: "NewCM10", "NewCMMath", "Cambria Math", math, serif;
+
+    --tamaño-base: clamp(1rem, 0.94rem + 0.28vw, 1.125rem);
+    --tamaño-rótulo: 0.72rem;
+    --interlínea: 1.4;
+}
+
+body {
+    font-family: var(--fuente-cuerpo);
+    font-size: var(--tamaño-base);
+    line-height: var(--interlínea);
+    font-kerning: normal;
+    font-variant-ligatures: common-ligatures;
+    hyphens: auto;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--fuente-títulos);
+    font-weight: 700;
+    line-height: 1.15;
+    text-wrap: balance;
+    hyphens: none;
+}
+
+h1 {
+    font-size: clamp(1.9rem, 1.5rem + 1.8vw, 2.7rem);
+    letter-spacing: -0.015em;
+}
+
+h2 {
+    font-size: 1.3rem;
+}
+
+h3 {
+    font-size: 1.05rem;
+}
+
+h4, h5, h6 {
+    font-size: 1rem;
+}
+
+p, li, dd {
+    text-wrap: pretty;
+}
+
+.rótulo,
+footer nav a span,
+dt {
+    font-family: var(--fuente-títulos);
+    font-size: var(--tamaño-rótulo);
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    hyphens: none;
+}
+
+pre, code, kbd, samp, .parámetro {
+    font-family: var(--fuente-código);
+    font-size: 0.95em;
+    font-variant-ligatures: none;
+    hyphens: none;
+}
+
+var, math, .matemáticas {
+    font-family: var(--fuente-matemáticas);
+    font-style: italic;
+}
+
+sub, sup {
+    font-family: var(--fuente-matemáticas);
+    font-size: 0.7em;
+    line-height: 0;
+    position: relative;
+    vertical-align: baseline;
+}
+
+sub { bottom: -0.25em; }
+sup { top: -0.5em; }
+
+q {
+    font-style: italic;
+}
+
+cite {
+    font-style: italic;
+    color: var(--color-tenue);
+}
+
+strong {
+    font-weight: 700;
+}
+
+abbr[title] {
+    text-decoration: underline dotted;
+    cursor: help;
+}

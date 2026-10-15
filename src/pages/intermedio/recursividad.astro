@@ -1,6 +1,6 @@
 ---
 import { getCollection } from "astro:content"
-import DiseñoBásico from "../../layouts/DiseñoBásico.astro"
+import DiseñoCapítulo from "../../layouts/DiseñoCapítulo.astro"
 import Quiz from "../../components/Quiz.astro"
 import Prolog from "../../components/Prolog.astro"
 import Python from "../../components/Python.astro"
@@ -9,9 +9,8 @@ const factorial = (await getCollection("factorial"))
     .sort((a, b) => a.data.orden - b.data.orden);
 ---
 
-<DiseñoBásico capítulo="intermedio/recursividad">
+<DiseñoCapítulo capítulo="intermedio/recursividad">
 
-    <h1>Recursividad</h1>
     <p>
         Recursividad.
     </p>
@@ -188,7 +187,8 @@ const factorial = (await getCollection("factorial"))
             </section>
         )}
         <p>
-            <button class="atrás">Atrás</button>
+            <button class="atrás" hidden>Atrás</button>
+            <button class="reiniciar" hidden>¿Empezar otra vez?</button>
             <button class="adelante">Adelante</button>
         </p>
     </div>
@@ -227,9 +227,20 @@ const factorial = (await getCollection("factorial"))
         funciones haciendo uso de la recursividad, y en un mismo cuerpo puede haber más de una llamada
         recursiva. Por ejemplo, si tomamos la siguiente función:
     </p>
-    <p is:raw>
-        f_1(x) = \begin{cases} 2 + x & \text{si } x \leq 1 \\ f_1(x - 1) + f_1(x - 2) & \text{si } x > 1 \end{cases}
-    </p>
+    <figure class="función">
+        <table>
+            <tr>
+                <td rowspan="2"><var>f</var><sub>1</sub>(<var>x</var>) =</td>
+                <td rowspan="2" class="llave"><span>&lbrace;</span></td>
+                <td>2 + <var>x</var></td>
+                <td>si <var>x</var> ≤ 1</td>
+            </tr>
+            <tr>
+                <td><var>f</var><sub>1</sub>(<var>x</var> − 1) + <var>f</var><sub>1</sub>(<var>x</var> − 2)</td>
+                <td>si <var>x</var> &gt; 1</td>
+            </tr>
+        </table>
+    </figure>
     <p>
         Podríamos representar dicha función de la siguiente manera en Prolog:
     </p>
@@ -250,13 +261,47 @@ const factorial = (await getCollection("factorial"))
 
     <Quiz ruta="intermedio/recursividad/quiz13" />
 
-</DiseñoBásico>
+</DiseñoCapítulo>
+
+<style>
+    .función table {
+        width: auto;
+        margin: 0 auto;
+        border-collapse: collapse;
+        font-family: var(--fuente-matemáticas);
+        font-size: 1.15rem;
+        line-height: 1.2;
+    }
+
+    .función td {
+        padding: 0.2em 0.35em;
+        vertical-align: middle;
+        white-space: nowrap;
+    }
+
+    .función td:last-child {
+        padding-left: 2em;
+    }
+
+    .función .llave {
+        padding: 0;
+        font-size: 2.6em;
+        line-height: 1;
+    }
+
+    .función .llave span {
+        display: inline-block;
+        margin-inline: -0.12em;
+        transform: scaleX(0.5);
+    }
+</style>
 
 <script>
     const pasos = document.querySelectorAll(".flujo section[data-paso]");
-    const atrás = document.querySelector(".flujo button.atrás");
-    const adelante = document.querySelector(".flujo button.adelante");
-    if (!atrás || !adelante) throw Error("El flujo no tiene botones de navegación");
+    const atrás = document.querySelector<HTMLButtonElement>(".flujo button.atrás");
+    const reiniciar = document.querySelector<HTMLButtonElement>(".flujo button.reiniciar");
+    const adelante = document.querySelector<HTMLButtonElement>(".flujo button.adelante");
+    if (!atrás || !reiniciar || !adelante) throw Error("El flujo no tiene botones de navegación");
 
     let actual = 0;
 
@@ -264,12 +309,12 @@ const factorial = (await getCollection("factorial"))
         pasos[actual].setAttribute("hidden", "");
         actual = siguiente;
         pasos[actual].removeAttribute("hidden");
-        adelante.textContent = actual === pasos.length - 1 ? "¿Empezar otra vez?" : "Adelante";
+        atrás.hidden = actual === 0;
+        adelante.hidden = actual === pasos.length - 1;
+        reiniciar.hidden = !adelante.hidden;
     };
 
-    adelante.addEventListener("click", () =>
-        mostrar(actual === pasos.length - 1 ? 0 : actual + 1));
-
-    atrás.addEventListener("click", () =>
-        mostrar(actual === 0 ? pasos.length - 1 : actual - 1));
+    adelante.addEventListener("click", () => mostrar(actual + 1));
+    atrás.addEventListener("click", () => mostrar(actual - 1));
+    reiniciar.addEventListener("click", () => mostrar(0));
 </script>

@@ -4,6 +4,7 @@
         "orden": 1,
         "título": "Antecedentes de Prolog",
         "títuloÍndice": "Antecedentes",
+        "encabezado": "Introducción",
         "grupoÍndice": "¿Qué es Prolog 27 mg y para qué se utiliza?",
         "descripción": "Introducción a Prolog: origen, enfoque declarativo, unificación, diferencias con lenguajes imperativos y motivación de esta guía para estudiantes."
     },
@@ -11,6 +12,7 @@
         "id": "introducción/beneficios",
         "orden": 2,
         "título": "Utilidad práctica de Prolog",
+        "encabezado": "¿Pero para qué quiero Prolog si no lo voy a utilizar nunca?",
         "grupoÍndice": "¿Qué es Prolog 27 mg y para qué se utiliza?",
         "descripción": "Descubre los beneficios de aprender Prolog más allá del ámbito académico: mejora tu pensamiento lateral, capacidad de modelado y comprensión de la programación declarativa."
     },
@@ -25,6 +27,7 @@
         "id": "introducción/sbr",
         "orden": 4,
         "título": "Sistemas basados en reglas",
+        "encabezado": "Introducción a los Sistemas Basados en Reglas",
         "grupoÍndice": "Composición de Prolog 27 mg",
         "descripción": "Aprende qué es un sistema basado en reglas y cómo Prolog es uno: base de conocimiento, motor de inferencia, hechos, reglas y objetivos, con ejemplos de árbol genealógico."
     },
@@ -33,6 +36,7 @@
         "orden": 5,
         "título": "Backtracking",
         "títuloÍndice": "<i>Backtracking</i>",
+        "encabezado": "¿Palante, patrás? Hablemos de <strong>backtracking</strong>",
         "grupoÍndice": "Composición de Prolog 27 mg",
         "descripción": "Aprende qué es el backtracking en Prolog: búsqueda en profundidad, recursividad, casos base y cómo evitar bucles infinitos."
     },
@@ -48,6 +52,7 @@
         "orden": 7,
         "título": "Predicados",
         "títuloÍndice": "Cómo utilizar Prolog",
+        "encabezado": "Predicados, o ¿cómo funciona esta cosa?",
         "grupoÍndice": "Modo de uso",
         "descripción": "Aprende sobre predicados en Prolog: hechos, reglas, consultas y buenas prácticas de eficiencia. Guía completa sobre la sintaxis y funcionamiento de predicados lógicos."
     },
@@ -55,6 +60,7 @@
         "id": "básico/elementos",
         "orden": 8,
         "título": "Posología de Prolog",
+        "encabezado": "Composición de Prolog, o ¿cómo monto yo esta cosa?",
         "grupoÍndice": "Modo de uso",
         "descripción": "Introducción práctica a la composición de Prolog con ejemplos de hechos, reglas y consultas, incluyendo ejercicios de vendedores y relaciones familiares."
     },
@@ -63,6 +69,7 @@
         "orden": 9,
         "título": "Operadores de comparación y de unificación",
         "títuloÍndice": "Operadores de Prolog",
+        "encabezado": "Operadores de comparación y operadores de unificación",
         "grupoÍndice": "Modo de uso",
         "descripción": "Explicación de operadores de comparación y unificación en Prolog: =, is, ==, \\==, \\=, conjunción, disyunción y \\+ con ejemplos y notas sobre unificación."
     },
@@ -79,6 +86,7 @@
         "orden": 11,
         "título": "Más variables y recursividad en Prolog",
         "títuloÍndice": "<em>Más</em> variables y recursividad",
+        "encabezado": "Recursividad",
         "grupoÍndice": "Modo de uso <em>intermedio</em>",
         "descripción": "Introducción a la recursividad en Prolog: comparación con iteración, ejemplos de factorial, sumatorio y funciones recursivas, y explicación de casos base y acumuladores."
     },
@@ -87,6 +95,7 @@
         "orden": 12,
         "título": "Estructuras de datos en Prolog",
         "títuloÍndice": "Estructuras de datos",
+        "encabezado": "Estructuras de datos",
         "grupoÍndice": "Modo de uso <em>intermedio</em>",
         "descripción": "Aprende sobre estructuras de datos en Prolog: tuplas, diccionarios, pilas, colas y árboles. Guía completa con ejemplos de código para representar y manipular estas estructuras en Prolog."
     },
@@ -102,6 +111,7 @@
         "orden": 14,
         "título": "Listas en Prolog",
         "títuloÍndice": "Listas",
+        "encabezado": "Listas",
         "grupoÍndice": "Modo de uso <strong>avanzado</strong>",
         "descripción": "Aprende sobre listas en Prolog, la estructura de datos más importante del lenguaje. Descubre cómo descomponer listas en cabeza y cola, recorrerlas recursivamente, e implementar predicados como member y nth_element."
     },
@@ -109,6 +119,7 @@
         "id": "avanzado/sermón",
         "orden": 15,
         "título": "Buenas prácticas, complejidad y eficiencia en Prolog",
+        "encabezado": "Despedida",
         "grupoÍndice": "Modo de uso <strong>avanzado</strong>",
         "descripción": "Guía de buenas prácticas, eficiencia y complejidad en Prolog. Aprende metodología declarativa, divide y vencerás, y ejemplos prácticos como torres de Hanoi y Diablotín."
     }

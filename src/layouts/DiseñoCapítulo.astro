@@ -1,0 +1,38 @@
+---
+import { getEntry } from "astro:content";
+import DiseñoBásico from "./DiseñoBásico.astro";
+import EnlacesPie from "../components/EnlacesPie.astro";
+
+interface Props {
+    capítulo: string
+}
+
+const { capítulo: id } = Astro.props;
+const capítulo = await getEntry("capítulos", id);
+
+if (!capítulo) {
+    throw Error(`No hay ningún capítulo con el id "${id}" en src/data/capítulos.json.`);
+}
+
+const { título, encabezado, descripción } = capítulo.data;
+---
+
+<DiseñoBásico>
+
+    <Fragment slot="head">
+        <title>{título}</title>
+        <meta name="description" content={descripción} />
+        <slot name="head" />
+    </Fragment>
+
+    <header>
+        <h1 set:html={encabezado ?? título} />
+    </header>
+    <main>
+        <slot />
+    </main>
+    <footer>
+        <EnlacesPie capítulo={capítulo} />
+    </footer>
+
+</DiseñoBásico>

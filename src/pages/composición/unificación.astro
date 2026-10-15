@@ -1,5 +1,5 @@
 ---
-import DiseñoBásico from "../../layouts/DiseñoBásico.astro"
+import DiseñoCapítulo from "../../layouts/DiseñoCapítulo.astro"
 import Quiz from "../../components/Quiz.astro"
 import Prolog from "../../components/Prolog.astro"
 import { Image } from "astro:assets"
@@ -7,9 +7,8 @@ import imagenSustito from "../../assets/images/composición/unificación/sustito
 import sustito from "../../assets/audio/composición/unificación/sustito.mp3"
 ---
 
-<DiseñoBásico capítulo="composición/unificación">
+<DiseñoCapítulo capítulo="composición/unificación">
 
-    <h1>Unificación</h1>
     <p>
         Estoy seguro de que llevas un buen rato preguntándote qué es eso de la unificación. No te
         preocupes, ¡vamos a hacer que desees no haberte hecho esa pregunta!
@@ -390,7 +389,7 @@ import sustito from "../../assets/audio/composición/unificación/sustito.mp3"
         No. Aquí debajo no hay nada. Tira parriba y hazle caso al pobre Eufrasio.
     </p>
 
-</DiseñoBásico>
+</DiseñoCapítulo>
 
 <style>
     @font-face {
@@ -404,14 +403,11 @@ import sustito from "../../assets/audio/composición/unificación/sustito.mp3"
     .eufrasio {
         display: block;
         position: relative;
+        margin-inline: auto;
         padding: 0;
         border: none;
         background: none;
         cursor: pointer;
-    }
-
-    .eufrasio[hidden] {
-        display: none;
     }
 
     .eufrasio img {
@@ -447,30 +443,6 @@ import sustito from "../../assets/audio/composición/unificación/sustito.mp3"
         .eufrasio:hover { animation: none; }
     }
 
-    @font-face {
-        font-family: "NewCM10";
-        src: url("../../assets/fonts/NewComputerModern/otf/NewCM10-Book.otf") format("opentype");
-        font-weight: 400;
-        font-style: normal;
-        font-display: swap;
-    }
-
-    @font-face {
-        font-family: "NewCM10";
-        src: url("../../assets/fonts/NewComputerModern/otf/NewCM10-BookItalic.otf") format("opentype");
-        font-weight: 400;
-        font-style: italic;
-        font-display: swap;
-    }
-
-    @font-face {
-        font-family: "NewCMMath";
-        src: url("../../assets/fonts/NewComputerModern/otf/NewCMMath-Regular.otf") format("opentype");
-        font-weight: 400;
-        font-style: normal;
-        font-display: swap;
-    }
-
     /* Oculta pero reservando el sitio: el hueco en blanco es la broma */
     .en-blanco {
         visibility: hidden;
@@ -483,7 +455,7 @@ import sustito from "../../assets/audio/composición/unificación/sustito.mp3"
     .robinson table {
         margin: 0 auto;
         border-collapse: collapse;
-        font-family: "NewCM10", "NewCMMath", "Cambria Math", math, serif;
+        font-family: var(--fuente-matemáticas);
         font-size: 1.15rem;
         line-height: 1.2;
     }
