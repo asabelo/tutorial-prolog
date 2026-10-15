@@ -52,5 +52,7 @@ export default defineConfig({
     vite: {
         optimizeDeps: { exclude: ["pyodide"] },
         plugins: [viteStaticCopy({ targets: [pyodideTarget(), tauPrologTarget(), ...licenciasDeFuentes()] })],
-    }
+    },
+    site: 'https://asabelo.github.io',
+    base: '/tutorial-prolog',
 });

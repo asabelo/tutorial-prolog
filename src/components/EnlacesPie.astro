@@ -12,12 +12,14 @@ const posición = capítulos.findIndex(c => c.id === capítulo.id);
 
 const capítuloAnterior = posición > 0 ? capítulos[posición - 1] : undefined;
 const capítuloSiguiente = capítulos[posición + 1];
+
+const base = import.meta.env.BASE_URL.replace(/\/?$/, "/");
 ---
 
 <nav>
     <ul>
-        { capítuloAnterior && <li class="anterior"><a rel="prev" href={`/${capítuloAnterior.id}`}><span>Anterior</span> {capítuloAnterior.data.título}</a></li> }
-        <li class="índice"><a href="/">Volver al índice</a></li>
-        { capítuloSiguiente && <li class="siguiente"><a rel="next" href={`/${capítuloSiguiente.id}`}><span>Siguiente</span> {capítuloSiguiente.data.título}</a></li> }
+        { capítuloAnterior && <li class="anterior"><a rel="prev" href={`${base}${capítuloAnterior.id}`}><span>Anterior</span> {capítuloAnterior.data.título}</a></li> }
+        <li class="índice"><a href={base}>Volver al índice</a></li>
+        { capítuloSiguiente && <li class="siguiente"><a rel="next" href={`${base}${capítuloSiguiente.id}`}><span>Siguiente</span> {capítuloSiguiente.data.título}</a></li> }
     </ul>
 </nav>
